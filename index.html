@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tati Diniz Confeitaria — Bolos artesanais, doces finos e salgados feitos com amor em São José dos Pinhais, PR. Encomendas pelo WhatsApp." />
+  <meta name="keywords" content="confeitaria, bolos personalizados, brigadeiros, doces finos, São José dos Pinhais, Tati Diniz" />
+  <meta property="og:title" content="Tati Diniz Confeitaria" />
+  <meta property="og:description" content="Doces momentos feitos com amor. Bolos artesanais, brigadeiros e muito mais." />
+  <meta property="og:type" content="website" />
+  <title>Tati Diniz Confeitaria | Doces Momentos Feitos com Amor</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CANVAS CONFETTI ========== -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ========== FLOATING SVGs ========== -->
+  <div class="floaters" aria-hidden="true">
+    <svg class="floater f1" viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="none" stroke="#e8b4c0" stroke-width="2"/><circle cx="20" cy="20" r="8" fill="#e8b4c0" opacity=".5"/></svg>
+    <svg class="floater f2" viewBox="0 0 30 30"><polygon points="15,2 18,11 28,11 20,17 23,27 15,21 7,27 10,17 2,11 12,11" fill="#d4a853" opacity=".6"/></svg>
+    <svg class="floater f3" viewBox="0 0 36 36"><path d="M18 3 C10 3 3 10 3 18 C3 26 10 33 18 33 C26 33 33 26 33 18 C33 10 26 3 18 3Z" fill="none" stroke="#c8a882" stroke-width="1.5"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="14">♥</text></svg>
+    <svg class="floater f4" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#f2d4da" opacity=".7"/></svg>
+    <svg class="floater f5" viewBox="0 0 28 28"><polygon points="14,1 17,10 26,10 19,15 22,25 14,19 6,25 9,15 2,10 11,10" fill="#e8b4c0" opacity=".5"/></svg>
+    <svg class="floater f6" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="#d4a853" opacity=".35"/></svg>
+    <svg class="floater f7" viewBox="0 0 32 32"><path d="M16 4 C12 4 4 10 4 18 C4 24 9 28 16 28 C23 28 28 24 28 18 C28 10 20 4 16 4Z" fill="none" stroke="#e8b4c0" stroke-width="2"/></svg>
+    <svg class="floater f8" viewBox="0 0 20 20"><polygon points="10,1 12,7 19,7 13,11 15,18 10,14 5,18 7,11 1,7 8,7" fill="#c8a882" opacity=".5"/></svg>
+  </div>
+
+  <!-- ========== HEADER / NAV ========== -->
+  <header id="site-header">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">Tati Diniz</span>
+        <span class="logo-sub">Confeitaria</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+        <li><a href="#galeria" class="nav-link">Galeria</a></li>
+        <li><a href="#avaliacoes" class="nav-link">Avaliações</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+        <li><a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="nav-cta">Fazer Pedido</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1600&q=80" alt="Bolo artesanal decorado da Tati Diniz Confeitaria" class="hero-img" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">✦ Confeitaria Artesanal ✦</p>
+      <h1 class="hero-title reveal reveal-delay-1">
+        Tati Diniz<br /><em>Confeitaria</em>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-2">Doces momentos feitos com amor</p>
+      <div class="hero-rating reveal reveal-delay-3">
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+        <span class="rating-text">4.9 — Clientes apaixonados</span>
+      </div>
+      <div class="hero-actions reveal reveal-delay-4">
+        <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+        <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="btn btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Fazer Pedido
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== SOBRE ========== -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="sobre-grid">
+        <div class="sobre-image-wrap reveal">
+          <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=800&q=80" alt="Confeiteira decorando bolo artesanal" class="sobre-img" loading="lazy" />
+          <div class="sobre-badge">
+            <span class="badge-num">4.9</span>
+            <span class="badge-label">⭐ no Google</span>
+          </div>
+        </div>
+        <div class="sobre-text">
+          <p class="section-eyebrow reveal">Nossa história</p>
+          <h2 class="section-title reveal reveal-delay-1">Feito com carinho,<br /><em>servido com amor</em></h2>
+          <p class="sobre-desc reveal reveal-delay-2">Transformamos ingredientes em momentos especiais. Bolos, doces e salgados feitos com carinho para deixar seus dias mais doces.</p>
+          <p class="sobre-desc reveal reveal-delay-3">Cada receita é preparada artesanalmente, com ingredientes selecionados e muito capricho — porque cada ocasião especial merece algo verdadeiramente único.</p>
+          <div class="sobre-features reveal reveal-delay-4">
+            <div class="feature-item">
+              <span class="feature-icon">🎂</span>
+              <span>Bolos artesanais</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🍫</span>
+              <span>Doces finos</span>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">✨</span>
+              <span>Encomendas especiais</span>
+            </div>
+          </div>
+          <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20conhecer%20mais%20sobre%20a%20confeitaria." target="_blank" class="btn btn-outline reveal reveal-delay-5">Fale Conosco</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATÁLOGO ========== -->
+  <section id="catalogo" class="section section-tinted">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Nossos produtos</p>
+        <h2 class="section-title">Catálogo <em>Completo</em></h2>
+        <p class="section-desc">Cada item é preparado sob encomenda com ingredientes frescos e muito amor.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="catalog-tabs reveal">
+        <button class="tab-btn active" data-tab="bolos">🎂 Bolos</button>
+        <button class="tab-btn" data-tab="doces">🍬 Doces</button>
+        <button class="tab-btn" data-tab="salgados">🥐 Salgados</button>
+      </div>
+
+      <!-- Bolos -->
+      <div class="tab-content active" id="tab-bolos">
+        <div class="catalog-grid">
+          <div class="product-card reveal">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80" alt="Bolo personalizado" loading="lazy" />
+              <span class="product-badge">Popular</span>
+            </div>
+            <div class="product-body">
+              <h3>Bolo Personalizado</h3>
+              <p>Bolo exclusivo criado especialmente para o seu evento, com decoração única e sabor incrível.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20um%20Bolo%20Personalizado." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&q=80" alt="Bolo de aniversário" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>Bolo de Aniversário</h3>
+              <p>Celebre cada aniversário com um bolo lindo e delicioso, feito com todo o carinho para o seu dia especial.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20um%20Bolo%20de%20Aniversário." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-2">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&q=80" alt="Bolo decorado" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>Bolo Decorado</h3>
+              <p>Arte e sabor em um só bolo. Decorações florais, temáticas ou minimalistas para toda ocasião.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20um%20Bolo%20Decorado." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doces -->
+      <div class="tab-content" id="tab-doces">
+        <div class="catalog-grid">
+          <div class="product-card reveal">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Brigadeiros gourmet" loading="lazy" />
+              <span class="product-badge">Favorito</span>
+            </div>
+            <div class="product-body">
+              <h3>Brigadeiros Gourmet</h3>
+              <p>Brigadeiros artesanais com cobertura especial. Chocolate belga, frutas vermelhas, pistache e muito mais.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20Brigadeiros%20Gourmet." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Doces finos" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>Doces Finos</h3>
+              <p>Uma seleção sofisticada de doces para casamentos, festas e eventos especiais. Cada peça, uma obra de arte.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20Doces%20Finos." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-2">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80" alt="Sobremesas" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>Sobremesas</h3>
+              <p>Tortas, mousses e sobremesas irresistíveis para adoçar qualquer momento com elegância e sabor.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20Sobremesas." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Salgados -->
+      <div class="tab-content" id="tab-salgados">
+        <div class="catalog-grid">
+          <div class="product-card reveal">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?w=600&q=80" alt="Salgados para festas" loading="lazy" />
+              <span class="product-badge">Novidade</span>
+            </div>
+            <div class="product-body">
+              <h3>Salgados para Festas</h3>
+              <p>Mini quiches, coxinhas, esfihas e muito mais. Salgados artesanais que fazem sucesso em qualquer evento.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20Salgados%20para%20Festas." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-1">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80" alt="Kits de salgados" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>Kits Especiais</h3>
+              <p>Kits completos com combinações de doces e salgados para presentear ou animar seu evento com estilo.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20encomendar%20um%20Kit%20Especial." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+          <div class="product-card reveal reveal-delay-2">
+            <div class="product-img-wrap">
+              <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80" alt="Encomendas corporativas" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <h3>Encomendas Corporativas</h3>
+              <p>Soluções gastronômicas para eventos corporativos, reuniões e comemorações de empresa com muito sabor.</p>
+              <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20saber%20sobre%20Encomendas%20Corporativas." target="_blank" class="btn btn-small">Encomendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== GALERIA ========== -->
+  <section id="galeria" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Nosso trabalho</p>
+        <h2 class="section-title">Galeria <em>de Artes</em></h2>
+        <p class="section-desc">Cada peça conta uma história. Veja o amor que colocamos em cada criação.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-large reveal">
+          <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=900&q=80" alt="Bolo floral decorado" loading="lazy" />
+          <div class="gallery-overlay"><span>Bolo Floral</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&q=80" alt="Cupcakes decorados" loading="lazy" />
+          <div class="gallery-overlay"><span>Cupcakes</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1547414368-ac947d00b91d?w=600&q=80" alt="Doces finos" loading="lazy" />
+          <div class="gallery-overlay"><span>Doces Finos</span></div>
+        </div>
+        <div class="gallery-item reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&q=80" alt="Mesa de festa" loading="lazy" />
+          <div class="gallery-overlay"><span>Mesa de Festa</span></div>
+        </div>
+        <div class="gallery-item gallery-wide reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=900&q=80" alt="Bolos decorados variados" loading="lazy" />
+          <div class="gallery-overlay"><span>Criações Especiais</span></div>
+        </div>
+        <div class="gallery-item reveal">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Bolo de chocolate" loading="lazy" />
+          <div class="gallery-overlay"><span>Bolo Chocolate</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AVALIAÇÕES ========== -->
+  <section id="avaliacoes" class="section section-tinted">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Clientes felizes</p>
+        <h2 class="section-title">O que dizem <em>sobre nós</em></h2>
+        <div class="rating-hero">
+          <div class="stars-big">⭐⭐⭐⭐⭐</div>
+          <div class="rating-num">4.9</div>
+          <div class="rating-label">estrelas no Google</div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-header">
+            <div class="review-avatar">AM</div>
+            <div>
+              <strong>Ana Martins</strong>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>"O bolo de aniversário da minha filha ficou simplesmente perfeito! A Tati entendeu exatamente o que eu queria e superou todas as expectativas. Sabor incrível, decoração linda. Com certeza vou encomendar mais!"</p>
+          <span class="review-date">Há 2 semanas</span>
+        </div>
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#c8a882;">RO</div>
+            <div>
+              <strong>Ricardo Oliveira</strong>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>"Contratei a Tati Diniz para o casamento da nossa filha e foi a melhor decisão. Os brigadeiros gourmet e os doces finos foram elogiados por todos os convidados. Profissionalismo e sabor impecáveis!"</p>
+          <span class="review-date">Há 1 mês</span>
+        </div>
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#d4a853;">CS</div>
+            <div>
+              <strong>Camila Silva</strong>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>"Fiz um pedido de última hora e mesmo assim ficou maravilhoso! Atendimento super atencioso, entrega no prazo e sabor que conquistou a família toda. Já indiquei para várias amigas!"</p>
+          <span class="review-date">Há 3 semanas</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#6b3d2e;">MP</div>
+            <div>
+              <strong>Mariana Pereira</strong>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>"Os salgados para o chá de bebê foram um sucesso absoluto! Todo mundo perguntou onde eu havia encomendado. A Tati é uma artista da confeitaria. Muito obrigada pelo capricho!"</p>
+          <span class="review-date">Há 5 dias</span>
+        </div>
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#e8b4c0;color:#333;">LF</div>
+            <div>
+              <strong>Lucas Ferreira</strong>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>"Melhor confeitaria da região! Já encomendo há dois anos para todos os aniversários da família. Qualidade constante, preço justo e sempre com aquele toque especial que só a Tati sabe dar."</p>
+          <span class="review-date">Há 1 semana</span>
+        </div>
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-header">
+            <div class="review-avatar" style="background:#7a9e7e;">JC</div>
+            <div>
+              <strong>Juliana Costa</strong>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            </div>
+          </div>
+          <p>"Encomendei um bolo temático e ficou além da minha imaginação! Detalhes perfeitos, saboroso do começo ao fim. A Tati realmente transforma sonhos em realidade. Super recomendo!"</p>
+          <span class="review-date">Há 2 meses</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HORÁRIOS ========== -->
+  <section id="horarios" class="section">
+    <div class="container">
+      <div class="horarios-grid">
+        <div class="horarios-text reveal">
+          <p class="section-eyebrow">Quando estamos aqui</p>
+          <h2 class="section-title">Horários de <em>Atendimento</em></h2>
+          <p class="horarios-desc">Visite-nos ou entre em contato para fazer seu pedido. Atendemos com amor em todos os dias que estamos abertos!</p>
+          <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="btn btn-primary">Fazer Pedido Agora</a>
+        </div>
+        <div class="horarios-table-wrap reveal reveal-delay-1">
+          <table class="horarios-table">
+            <tbody id="horarios-body">
+              <tr data-day="1"><td>Segunda-feira</td><td class="closed-tag">Fechado</td></tr>
+              <tr data-day="2"><td>Terça-feira</td><td>08:00 – 17:00</td></tr>
+              <tr data-day="3"><td>Quarta-feira</td><td>09:00 – 17:00</td></tr>
+              <tr data-day="4"><td>Quinta-feira</td><td>08:00 – 17:00</td></tr>
+              <tr data-day="5"><td>Sexta-feira</td><td>08:00 – 17:00</td></tr>
+              <tr data-day="6"><td>Sábado</td><td>08:00 – 17:00</td></tr>
+              <tr data-day="0"><td>Domingo</td><td>08:00 – 12:00</td></tr>
+            </tbody>
+          </table>
+          <div class="status-badge" id="status-badge"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LOCALIZAÇÃO ========== -->
+  <section id="localizacao" class="section section-tinted">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Onde nos encontrar</p>
+        <h2 class="section-title">Nossa <em>Localização</em></h2>
+      </div>
+      <div class="location-grid">
+        <div class="location-info reveal">
+          <div class="location-item">
+            <span class="location-icon">📍</span>
+            <div>
+              <strong>Endereço</strong>
+              <p>Estr. Ver. Domingos Benvenuto Moletta, 83<br />Campo Largo da Roseira<br />São José dos Pinhais – PR, 83006-970</p>
+            </div>
+          </div>
+          <div class="location-item">
+            <span class="location-icon">📱</span>
+            <div>
+              <strong>WhatsApp</strong>
+              <p><a href="https://wa.me/5541991934544" target="_blank">+55 41 99193-4544</a></p>
+            </div>
+          </div>
+          <div class="location-item">
+            <span class="location-icon">📸</span>
+            <div>
+              <strong>Instagram</strong>
+              <p><a href="https://www.instagram.com/tatidiniz_confeitaria" target="_blank">@tatidiniz_confeitaria</a></p>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/search/Estr.+Ver.+Domingos+Benvenuto+Moletta,+83,+Campo+Largo+da+Roseira,+São+José+dos+Pinhais+-+PR" target="_blank" class="btn btn-outline">Ver no Google Maps</a>
+        </div>
+        <div class="map-container reveal reveal-delay-1">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.3!2d-49.22!3d-25.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce59f46f8a965%3A0x0!2sEstr.+Ver.+Domingos+Benvenuto+Moletta%2C+83+-+Campo+Largo+da+Roseira%2C+S%C3%A3o+Jos%C3%A9+dos+Pinhais+-+PR%2C+83006-970!5e0!3m2!1spt-BR!2sbr!4v1"
+            width="100%"
+            height="400"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização Tati Diniz Confeitaria"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTATO / FOOTER ========== -->
+  <footer id="contato">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand reveal">
+          <div class="footer-logo">
+            <span class="logo-icon">✦</span>
+            <span>Tati Diniz Confeitaria</span>
+          </div>
+          <p>Doces momentos feitos com amor, em São José dos Pinhais — PR.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/tatidiniz_confeitaria" target="_blank" class="social-btn" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/5541991934544" target="_blank" class="social-btn" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links reveal reveal-delay-1">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#avaliacoes">Avaliações</a></li>
+            <li><a href="#localizacao">Localização</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact reveal reveal-delay-2">
+          <h4>Pedidos & Contato</h4>
+          <p>📱 <a href="https://wa.me/5541991934544" target="_blank">+55 41 99193-4544</a></p>
+          <p>📸 <a href="https://www.instagram.com/tatidiniz_confeitaria" target="_blank">@tatidiniz_confeitaria</a></p>
+          <p>📍 São José dos Pinhais – PR</p>
+          <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="btn btn-primary" style="margin-top:1rem">Fazer Pedido</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tati Diniz Confeitaria · Feito com <span style="color:#e8b4c0">♥</span> em São José dos Pinhais</p>
+    </div>
+  </footer>
+
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/5541991934544?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span class="wf-tooltip">Fazer Pedido</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
